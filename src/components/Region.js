@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const Region = () => {
-  return (
-    <div>Region</div>
-  )
-}
+const Region = () => <div>Region</div>;
 
-export default Region
+export default Region;

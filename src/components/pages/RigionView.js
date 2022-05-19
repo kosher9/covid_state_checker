@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const RigionView = () => {
-  return (
-    <div>RigionView</div>
-  )
-}
+const RigionView = () => (
+  <div>RigionView</div>
+);
 
-export default RigionView
+export default RigionView;

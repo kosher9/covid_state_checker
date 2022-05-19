@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const World = () => {
-  return (
-    <div>World</div>
-  )
-}
+const World = () => (
+  <div>World</div>
+);
 
-export default World
+export default World;

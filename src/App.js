@@ -1,6 +1,6 @@
 import './App.css';
-import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Home from './components/pages/Home';
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/param' element={<div>Param</div>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/param" element={<div>Param</div>} />
       </Routes>
     </>
   );

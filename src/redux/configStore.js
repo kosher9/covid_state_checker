@@ -1,4 +1,4 @@
-import configureStore, { combineReducers, applyMiddleware } from '@reduxjs/toolkit';
+import { combineReducers, applyMiddleware, configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import logger from 'react-logger';
 import { countryReducer } from './country';

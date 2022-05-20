@@ -19,17 +19,17 @@ const CountryList = ({ searchTerm = '' }) => {
 
   useEffect(() => {
     const cleanSearchTerm = searchTerm.toLowerCase().trim();
-    setVisibleCountries(data.filter((d) => {
+    setVisibleCountries(data?.filter((d) => {
       const countryName = d.name.toLowerCase();
       return countryName.includes(cleanSearchTerm);
-    }));
+    }) || data);
   }, [searchTerm]);
 
   return (
     <div>
       <div className="grid grid-cols-2 striped gap-2">
         {loading ? (
-          visibleCountries.map((country, index) => (
+          visibleCountries?.map((country, index) => (
             <Country key={country.id} data={country} index={index} />
           ))
         ) : (

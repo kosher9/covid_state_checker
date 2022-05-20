@@ -12,17 +12,17 @@ const initialState = {
 };
 
 // Set the url for the API
-export const getCountriesAction = (data) => ({
+export const getRegionsAction = (data) => ({
   type: GET_REGIONS,
   payload: data,
 });
 
-const getCountryLoading = () => ({
+export const getRegionLoading = () => ({
   type: GET_REGIONS_LOADING,
   payload: [],
 });
 
-const getCountriesError = () => ({
+export const getRegionError = () => ({
   type: GET_REGIONS_ERROR,
   payload: [],
 });
@@ -39,7 +39,7 @@ export const fetchRegions = (countryName) => async (dispatch) => {
   await fetch(`${BASE_URL}/2020-03-10/country/${countryName}`)
     .then((res) => res.json())
     .then((data) => {
-      getCountryLoading();
+      getRegionLoading();
       const regions = [];
       const regionsData = data.dates['2020-03-10'].countries[camelCase(countryName)].regions;
       regionsData.forEach((region) => {
@@ -49,10 +49,10 @@ export const fetchRegions = (countryName) => async (dispatch) => {
           cases: region.today_confirmed,
         });
       });
-      dispatch(getCountriesAction(regions));
+      dispatch(getRegionsAction(regions));
     })
     .catch((err) => {
-      dispatch(getCountriesError(err));
+      dispatch(getRegionError(err));
     });
 };
 

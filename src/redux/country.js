@@ -21,7 +21,7 @@ export const getCountriesError = () => ({
   payload: [],
 });
 
-const getCountryLoading = () => ({
+export const getCountryLoading = () => ({
   type: GET_COUNTRIES_LOADING,
   payload: [],
 });

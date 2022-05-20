@@ -22,7 +22,7 @@ const Country = ({ data, index }) => {
 
   return (
     <Link
-      to={`/country/${id}`}
+      to={`/region/${id}`}
       className={`${classCurrect} transition duration-300 flex flex-col justify-end aspect-square bg-pink-600 hover:shadow hover:-translate-y-1 text-right relative`}
     >
       <div
@@ -34,7 +34,7 @@ const Country = ({ data, index }) => {
           backgroundPosition: 'center',
         }}
       />
-      <h2 className="text-sm md:text-base mr-2">{name}</h2>
+      <h2 className="md:text-base mr-2 font-medium">{name}</h2>
       <p className="text-sm md:text-base mr-2">{`Confirmed : ${confirmed}`}</p>
     </Link>
   );

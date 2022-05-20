@@ -1,3 +1,5 @@
+import BASE_URL from '../url_config';
+
 // Set an initial state
 const initialState = [];
 const GET_COUNTRIES = 'GET_COUNTRIES';
@@ -30,7 +32,7 @@ const getCountryLoading = () => ({
 }); */
 
 export const fetchCountries = () => async (dispatch) => {
-  await fetch('https://api.covid19tracking.narrativa.com/api/2020-03-10')
+  await fetch(`${BASE_URL}/2020-03-10`)
     .then((res) => res.json())
     .then((data) => {
       getCountryLoading();
@@ -42,10 +44,12 @@ export const fetchCountries = () => async (dispatch) => {
           id: countriesData[cntry].id,
           name: countriesData[cntry].name,
           confirmed: countriesData[cntry].today_confirmed,
+          regions: countriesData[cntry].regions,
         });
       });
 
       countries = countries.filter((cntry) => cntry.confirmed > 0);
+      countries = countries.filter((cntry) => cntry.regions.length > 0);
       countries.sort((a, b) => a.confirmed > b.confirmed);
       dispatch(getCountriesAction(countries));
     })

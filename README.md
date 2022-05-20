@@ -40,4 +40,4 @@ Contributions, issues, and feature requests are welcome!
 Give a :star:️ if you like this project!
 ## Acknowledgments
 
-- Microverse offered guidance on how to make the project more professional
+- Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).

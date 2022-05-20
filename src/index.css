@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .striped div:nth-child(even) {
+      @apply bg-gray-100
+    }
+  }

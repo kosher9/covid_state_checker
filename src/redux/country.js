@@ -3,19 +3,20 @@ const initialState = [];
 const GET_COUNTRIES = 'GET_COUNTRIES';
 const GET_COUNTRIES_ERROR = 'GET_COUNTRIES_ERROR';
 const GET_COUNTRIES_LOADING = 'GET_COUNTRIES_LOADING';
+const FILTER_COUNTRY = 'FILTER_COUNTRY';
 // Set the url for the API
 
 // create an action
-const todayDate = new Date().toISOString().split('T')[0];
+// const todayDate = new Date().toISOString().split('T')[0];
 
 export const getCountriesAction = (data) => ({
   type: GET_COUNTRIES,
   payload: data,
 });
 
-export const getCountriesError = (err) => ({
+export const getCountriesError = () => ({
   type: GET_COUNTRIES_ERROR,
-  payload: err,
+  payload: [],
 });
 
 const getCountryLoading = () => ({
@@ -23,13 +24,18 @@ const getCountryLoading = () => ({
   payload: [],
 });
 
+/* const filterCountry = (filter) => ({
+  type: FILTER_COUNTRY,
+  payload: filter,
+}); */
+
 export const fetchCountries = () => async (dispatch) => {
-  await fetch(`https://api.covid19tracking.narrativa.com/api/${todayDate}`)
+  await fetch('https://api.covid19tracking.narrativa.com/api/2020-03-10')
     .then((res) => res.json())
     .then((data) => {
       getCountryLoading();
       let countries = [];
-      const countriesData = data.dates[todayDate].countries;
+      const countriesData = data.dates['2020-03-10'].countries;
 
       Object.keys(countriesData).forEach((cntry) => {
         countries.push({
@@ -52,12 +58,14 @@ export const fetchCountries = () => async (dispatch) => {
 export const countryReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_COUNTRIES:
-      return { ...action.payload, loadingState: 'success' };
+      return { data: action.payload, loading: 'success' };
     case GET_COUNTRIES_ERROR:
-      return { state, loadingState: 'error' };
+      return { ...state, error: 'error' };
     case GET_COUNTRIES_LOADING:
-      return { state, loadingState: 'loading' };
+      return { ...state, loading: 'loading' };
+    case FILTER_COUNTRY:
+      return { ...state, filter: action.payload };
     default:
-      return { state, loadingState: 'default' };
+      return state;
   }
 };

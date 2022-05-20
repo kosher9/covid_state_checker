@@ -11,7 +11,7 @@ This web app allows users to see available rockets for booking and missions they
 - Tailwind
 
 ## Live Demo
-https://covid-state.netlify.app
+[Live demo](https://soft-starlight-9bdc38.netlify.app/)
 
 ## installation
 

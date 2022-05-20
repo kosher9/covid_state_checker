@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page test render test 1`] = `
+Array [
+  <div
+    className="container mx-auto h-40 opacity-10"
+    style={
+      Object {
+        "backgroundImage": "url(https://mapsvg.com/static/maps/geo-calibrated/world.svg)",
+        "backgroundPosition": "center",
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "cover",
+      }
+    }
+  />,
+  <div
+    className="container mx-auto mt-4 absolute top-10"
+  >
+    <h3
+      className="text-black text-center text-bold text-base rounded bg-slate-100"
+    >
+      Covid state
+    </h3>
+    <input
+      className="rounded border-rose-600 m-auto block mt-5"
+      onChange={[Function]}
+      placeholder="Search country "
+      type="text"
+    />
+  </div>,
+  <h3>
+    Stats by country
+  </h3>,
+  <div>
+    <div
+      className="grid grid-cols-2 striped gap-2"
+    >
+      <div>
+        Loading...
+      </div>
+    </div>
+  </div>,
+]
+`;

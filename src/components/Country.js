@@ -11,6 +11,7 @@ const Country = ({ data, index }) => {
   const classAfter = 'opacity-100';
   const [classCurrect, setClassCurrent] = useState(classBefore);
 
+  // Don't forget to work on th e styling
   useEffect(() => {
     setTimeout(() => {
       setClassCurrent(classAfter);

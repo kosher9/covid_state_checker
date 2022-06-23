@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/89effbe5-ea91-4f9d-a00a-8fc5d63b390d/deploy-status)](https://app.netlify.com/sites/covid-state/deploys)
-# Space Traveler Hub
+# Covid State Checker
 This web app allows users to see available rockets for booking and missions they can join. Users can see their booked rockets and joined missions in the My-profile page and cancel any joined mission or booked rocket.
 
 
